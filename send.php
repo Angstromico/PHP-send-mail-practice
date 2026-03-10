@@ -1,4 +1,6 @@
 <?php
+require_once 'components/lang.php';
+
 if($_POST) {
  $subject = $_POST['subject'];
  $description = $_POST['description'];
@@ -40,7 +42,7 @@ try {
 
     $mail->send();
     header("Location: index.php");
-    echo 'Message has been sent';
+    echo t('message_sent');
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo t('message_error') . $mail->ErrorInfo;
 }

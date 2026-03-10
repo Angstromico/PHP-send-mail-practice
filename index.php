@@ -1,9 +1,10 @@
 <?php require_once 'components/input.php'; ?>
+<?php require_once 'components/header.php'; ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo getLanguage(); ?>">
  <head>
-  <title>Form Mails</title>
+  <title><?php echo t('contact_form'); ?></title>
   <meta charset="utf-8" />
   <meta
    name="viewport"
@@ -16,32 +17,38 @@
    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
    crossorigin="anonymous"
   />
+  <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+  />
  </head>
 
  <body data-bs-theme="dark">
-  <main>
+  <?php require_once 'components/header.php'; ?>
+  
+  <main class="container my-4">
    <div class="row justify-content-center mt-4">
     <div class="col-4">
      <div class="card shadow">
       <div class="card-body">
-       <h3 class="card-title">Contact Form</h3>
+       <h3 class="card-title"><?php echo t('contact_form'); ?></h3>
        <form action="send.php" method="post">
         <?php 
           renderInput([
-              'label' => 'Subject',
+              'label' => t('subject'),
               'name'  => 'subject',
-              'placeholder' => 'How can we help?'
+              'placeholder' => t('subject_placeholder')
           ]);
 
           renderInput([
-              'label' => 'Description',
+              'label' => t('description'),
               'name'  => 'description',
-              'placeholder' => 'Give us more details...',
+              'placeholder' => t('description_placeholder'),
               'isTextArea' => true
           ]);
         ?>
 
-        <button type="submit" class="btn btn-primary">Send Email</button>
+        <button type="submit" class="btn btn-primary"><?php echo t('send_email'); ?></button>
        </form>
        </div>
       </div>
