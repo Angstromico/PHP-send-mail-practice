@@ -1,10 +1,13 @@
 # PHP Mail Contact Form
 
+![Main image](main.png)
+
 A simple yet functional PHP contact form application that allows users to send emails through a web interface using PHPMailer and Gmail SMTP.
 
 ## 📋 Overview
 
 This project demonstrates a basic contact form implementation with the following features:
+
 - Clean, responsive Bootstrap 5 UI with dark theme
 - Form validation and user input handling
 - SMTP email sending using PHPMailer library
@@ -51,9 +54,9 @@ The project uses the following PHP packages managed by Composer:
 
 ```json
 {
-    "require": {
-        "phpmailer/phpmailer": "^7.0"
-    }
+  "require": {
+    "phpmailer/phpmailer": "^7.0"
+  }
 }
 ```
 
@@ -69,12 +72,14 @@ The project uses the following PHP packages managed by Composer:
 ### Installation Steps
 
 1. **Clone or download the repository**
+
    ```bash
    git clone <repository-url>
    cd mails
    ```
 
 2. **Install dependencies**
+
    ```bash
    cd libs
    composer install
@@ -84,6 +89,7 @@ The project uses the following PHP packages managed by Composer:
 3. **Configure environment variables**
    - Copy `.env.example` to `.env` (if not exists)
    - Update the `.env` file with your Gmail App Password:
+
    ```
    MAIL_PASSWORD=your_gmail_app_password
    ```
@@ -96,6 +102,7 @@ The project uses the following PHP packages managed by Composer:
 
 5. **Update email credentials in `send.php`**
    - Modify the SMTP settings with your Gmail credentials:
+
    ```php
    $mail->Username   = 'your_email@gmail.com';
    $mail->Password   = 'your_app_password';
@@ -139,29 +146,34 @@ renderInput([
 ## 📁 File Descriptions
 
 ### `index.php`
+
 - Main application entry point
 - Renders the contact form using Bootstrap 5
 - Includes the reusable input component
 - Handles form submission to `send.php`
 
 ### `send.php`
+
 - Processes form submissions
 - Configures and sends emails using PHPMailer
 - Handles success/error responses
 - Redirects back to the form after sending
 
 ### `components/input.php`
+
 - Reusable form input component
 - Supports both text inputs and textareas
 - Generates Bootstrap-styled form elements
 - Configurable through props array
 
 ### `.env`
+
 - Stores sensitive configuration
 - Contains email credentials
 - Excluded from version control for security
 
 ### `.gitignore`
+
 - Excludes sensitive files and dependencies
 - Prevents `.env` and `vendor/` from being committed
 
