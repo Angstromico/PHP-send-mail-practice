@@ -211,16 +211,6 @@ To enable detailed SMTP debugging, modify `send.php`:
 $mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Enable verbose debug output
 ```
 
-## 🚀 Future Enhancements
-
-- [ ] Add CAPTCHA for spam protection
-- [ ] Implement file attachment support
-- [ ] Add email template system
-- [ ] Include form validation
-- [ ] Add database logging of sent emails
-- [ ] Implement multiple recipient support
-- [ ] Add email queue system
-
 ## 📄 License
 
 This project is provided as-is for educational purposes. Feel free to modify and use it according to your needs.
